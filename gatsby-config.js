@@ -7,9 +7,11 @@ module.exports = {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "f2boyawd",
-        dataset: "",
+        dataset: "production",
       },
     },
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-image",
+    "gatsby-plugin-postcss",
   ],
-};
+}
