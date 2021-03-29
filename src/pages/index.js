@@ -16,7 +16,7 @@ const IndexPage = () => {
           src="https://www.buzzsprout.com/362981.js?player=small&limit=1&container_id=buzzsprout-small-player-362981-limit-1"
         ></script>
       </Helmet>
-      <section className="grid grid-cols-12 gap-5 mt-10">
+      <section className="grid grid-cols-12 gap-5 mt-12">
         <img
           src={picture}
           alt="profile"

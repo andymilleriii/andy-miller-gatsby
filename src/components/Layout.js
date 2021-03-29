@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       <div className="container">
         <div className="">{children}</div>
       </div>
-      <div className=" bg-gray-800 text-white mt-16">
+      <div className=" bg-gray-800 text-white mt-40">
         <div className="container flex justify-between h-24 items-center">
           <p>Copyright © 2021 Andrew S. Miller III</p>
           <p>Contact information</p>
