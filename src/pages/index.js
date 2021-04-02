@@ -4,10 +4,7 @@ import Layout from "../components/Layout"
 import Card from "../components/Card"
 import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
-import picture from "../images/profile2.jpeg"
-import family from "../images/family.jpeg"
-import family2 from "../images/family2.jpeg"
-import easter from "../images/easter.jpg"
+import SanityImage from 'gatsby-plugin-sanity-image'
 import ArticleCard from "../components/ArticleCard"
 
 export const query = graphql`
@@ -15,22 +12,23 @@ export const query = graphql`
     sanityHomePage {
       aboutHeader
       aboutImage {
-        _rawAsset
+        ...ImageWithPreview
+      }
+      mainImage {
+        ...ImageWithPreview
       }
       aboutContent
       aboutSubHeader
       featuredPost {
         id
         mainImage {
-          _rawAsset
+          ...ImageWithPreview
         }
         slug {
           current
         }
         title
-        body {
-          _rawChildren
-        }
+        previewText
       }
     }
     allSanityPost(limit: 2) {
@@ -40,21 +38,28 @@ export const query = graphql`
           current
         }
         mainImage {
-          _rawAsset
+          ...ImageWithPreview
         }
         id
         publishedAt(formatString: "MMMM D")
-        body {
-          _rawChildren
-        }
+        previewText
       }
     }
   }
 `
 
 const IndexPage = ({ data }) => {
-
-  const {sanityHomePage:{aboutHeader, aboutImage, aboutContent, aboutSubheader, featuredPost}, allSanityPost:{posts}} = data
+  const {
+    sanityHomePage: {
+      aboutHeader,
+      aboutImage,
+      mainImage,
+      aboutContent,
+      aboutSubHeader,
+      featuredPost,
+    },
+    allSanityPost: { posts },
+  } = data
 
   return (
     <Layout>
@@ -66,15 +71,21 @@ const IndexPage = ({ data }) => {
         ></script>
       </Helmet>
       <section className="grid grid-cols-12 gap-5 mt-12">
-        <img
+        <SanityImage
+          {...mainImage}
+          width="500"
+          alt="profile"
+          className="row-span-3 col-span-4 bg-gray-100 rounded-md mb-5 h-500px w-full object-cover"
+        ></SanityImage>
+        {/* <img
           src={picture}
           alt="profile"
           className="row-span-3 col-span-4 bg-gray-100 rounded-md mb-5 h-500px w-full object-cover"
-        ></img>
+        ></img> */}
         <div className="col-span-8">
           <h1 className="text-3xl sm:text-7xl font-thin">{aboutHeader}</h1>
           <h2 className="text-xl sm:text-4xl text-gray-700 mt-5 font-light">
-            {aboutSubheader}
+            {aboutSubHeader}
           </h2>
         </div>
         <div className="col-span-12 sm:row-span-2 sm:col-span-3 sm:-ml-10 px-5 -mt-14 sm:p-0 sm:mt-0">
@@ -84,13 +95,9 @@ const IndexPage = ({ data }) => {
             classes="bg-gradient-to-b from-red-800 to-red-900"
             theme="dark"
           >
-            <p className="text-lg">
-              A loyal soldier approached me, it was clear he had something
-              important to say. It was Sunday and the holiness meeting had just
-              finished. His index finger was pointed right at me ...
-            </p>
+            <p className="text-lg">{featuredPost.previewText}</p>
             <br></br>
-            <Link to={'/articles/' + featuredPost.slug.current}>Read More</Link>
+            <Link to={"/articles/" + featuredPost.slug.current}>Read More</Link>
           </Card>
         </div>
         <div className="col-span-full px-5 sm:p-0 sm:row-span-2 sm:col-span-5 ">
@@ -115,16 +122,16 @@ const IndexPage = ({ data }) => {
             <ArticleCard
               date={posts[0].publishedAt}
               title={posts[0].title}
-              previewText="A loyal soldier approached me, it was clear he had something important to say. It was Sunday and the holiness meeting had just finished. His index finger was pointed right at me and ..."
+              previewText={posts[0].previewText}
               slug={posts[0].slug.current}
-              image={easter}
+              imageData={posts[0].mainImage}
             ></ArticleCard>
             <ArticleCard
-              date="March 9"
-              title="Miller Family News!"
-              previewText="A loyal soldier approached me, it was clear he had something important to say. It was Sunday and the holiness meeting had just finished. His index finger was pointed right at me and ..."
-              slug="here-we-go-an-easter-sermon"
-              image={family2}
+              date={posts[1].publishedAt}
+              title={posts[1].title}
+              previewText={posts[1].previewText}
+              slug={posts[1].slug.current}
+              imageData={posts[1].mainImage}
             ></ArticleCard>
           </div>
         </section>
@@ -133,14 +140,13 @@ const IndexPage = ({ data }) => {
 
         <section className="col-start-9 col-end-13">
           <h1 className="text-3xl mb-10">About</h1>
-          <img
-            src={family}
+          <SanityImage
+            {...aboutImage}
+            width="500"
             className="rounded-md"
             alt="Andy Miller and Family"
-          ></img>
-          <p className="text-lg mt-5">
-            {aboutContent}
-          </p>
+          ></SanityImage>
+          <p className="text-lg mt-5">{aboutContent}</p>
         </section>
       </div>
     </Layout>

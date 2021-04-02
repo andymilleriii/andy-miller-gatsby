@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import SanityImage from 'gatsby-plugin-sanity-image'
 
-const ArticleCard = ({ image, date, title, previewText, slug }) => {
+const ArticleCard = ({ imageData, date, title, previewText, slug }) => {
   return (
     <div className="rounded-md shadow bg-gradient-to-b from-gray-100 to-gray-200 flex h-72">
-      <img src={image} alt="" className="w-1/3 object-cover rounded-l-md"></img>
+      <SanityImage {...imageData} width="250" alt="" className="w-1/3 object-cover rounded-l-md"></SanityImage>
       <div className="p-5 h-full">
         <h2 className="text-gray-600 text-sm mb-4">{date}</h2>
         <h1 className="font-medium text-lg tracking-widest mb-5">{title}</h1>

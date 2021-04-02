@@ -21,5 +21,12 @@ module.exports = {
       },
     },
     "gatsby-plugin-postcss",
+    {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        projectId: "f2boyawd",
+        dataset: "production",
+      },
+    },
   ],
 }
