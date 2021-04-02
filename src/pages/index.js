@@ -64,24 +64,20 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Helmet>
+        <title>Andy Miller III - Home</title>
         <script
           type="text/javascript"
           charset="utf-8"
           src="https://www.buzzsprout.com/362981.js?player=small&limit=1&container_id=buzzsprout-small-player-362981-limit-1"
         ></script>
       </Helmet>
-      <section className="grid grid-cols-12 gap-5 mt-12">
+      <section className="grid grid-cols-12 gap-5">
         <SanityImage
           {...mainImage}
           width="500"
           alt="profile"
           className="row-span-3 col-span-4 bg-gray-100 rounded-md mb-5 h-500px w-full object-cover"
         ></SanityImage>
-        {/* <img
-          src={picture}
-          alt="profile"
-          className="row-span-3 col-span-4 bg-gray-100 rounded-md mb-5 h-500px w-full object-cover"
-        ></img> */}
         <div className="col-span-8">
           <h1 className="text-3xl sm:text-7xl font-thin">{aboutHeader}</h1>
           <h2 className="text-xl sm:text-4xl text-gray-700 mt-5 font-light">
@@ -120,18 +116,10 @@ const IndexPage = ({ data }) => {
           </h1>
           <div className="space-y-6">
             <ArticleCard
-              date={posts[0].publishedAt}
-              title={posts[0].title}
-              previewText={posts[0].previewText}
-              slug={posts[0].slug.current}
-              imageData={posts[0].mainImage}
+              post={posts[0]}
             ></ArticleCard>
             <ArticleCard
-              date={posts[1].publishedAt}
-              title={posts[1].title}
-              previewText={posts[1].previewText}
-              slug={posts[1].slug.current}
-              imageData={posts[1].mainImage}
+              post={posts[1]}
             ></ArticleCard>
           </div>
         </section>
