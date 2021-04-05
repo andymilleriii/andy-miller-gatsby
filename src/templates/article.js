@@ -23,7 +23,8 @@ const Article = ({ data }) => {
   return (
     <Layout>
       <main className="grid grid-cols-12">
-        <article className="col-start-4 col-span-6">
+          <div className="col-span-full row-start-1 row-span-1"></div>
+        <article className="col-start-4 col-span-6 row-start-1">
           <SanityImage
             {...data.sanityPost.mainImage}
             alt="data.sanityPost.title"

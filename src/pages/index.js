@@ -87,7 +87,11 @@ const IndexPage = ({ data }) => {
         <div className="col-span-12 sm:row-span-2 sm:col-span-3 sm:-ml-10 px-5 -mt-14 sm:p-0 sm:mt-0">
           <Card
             eyebrow="Featured Article"
-            title={featuredPost.title}
+            title={
+              <Link to={"/articles/" + featuredPost.slug.current}>
+                {featuredPost.title}
+              </Link>
+            }
             classes="bg-gradient-to-b from-red-800 to-red-900"
             theme="dark"
           >
@@ -115,12 +119,8 @@ const IndexPage = ({ data }) => {
             Recent Articles
           </h1>
           <div className="space-y-6">
-            <ArticleCard
-              post={posts[0]}
-            ></ArticleCard>
-            <ArticleCard
-              post={posts[1]}
-            ></ArticleCard>
+            <ArticleCard post={posts[0]}></ArticleCard>
+            <ArticleCard post={posts[1]}></ArticleCard>
           </div>
         </section>
 
