@@ -30,9 +30,10 @@ const Article = ({ data }) => {
           ></SanityImage>
           <h1 className="text-3xl my-10">{data.sanityPost.title}</h1>
           <PortableText
+            className="portable-text"
             content={data.sanityPost._rawBody}
             serializers={{
-              p: ({ children }) => <p className="mb-10 text-lg">{children}</p>,
+              link: props => <a className="text-red-700 underline" {...props} />
             }}
           ></PortableText>
         </article>
