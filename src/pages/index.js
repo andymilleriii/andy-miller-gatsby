@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import Card from "../components/Card"
 import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
-import SanityImage from 'gatsby-plugin-sanity-image'
+import SanityImage from "gatsby-plugin-sanity-image"
 import ArticleCard from "../components/ArticleCard"
 
 export const query = graphql`
@@ -71,7 +71,7 @@ const IndexPage = ({ data }) => {
           src="https://www.buzzsprout.com/362981.js?player=small&limit=1&container_id=buzzsprout-small-player-362981-limit-1"
         ></script>
       </Helmet>
-      <section className="grid grid-cols-12 gap-5">
+      <section className="grid grid-cols-1 gap-5">
         <SanityImage
           {...mainImage}
           width="500"
@@ -115,7 +115,7 @@ const IndexPage = ({ data }) => {
 
       <div className="grid grid-cols-12 gap-5">
         <section className="col-start-1 col-end-7">
-          <h1 className="col-start-2 col-end-9 text-3xl mb-10">
+          <h1 className="col-start-2 col-end-9 text-3xl mb-10 uppercase">
             Recent Articles
           </h1>
           <div className="space-y-6">
@@ -127,7 +127,7 @@ const IndexPage = ({ data }) => {
         <div className="w-px bg-red-900 col-start-8"></div>
 
         <section className="col-start-9 col-end-13">
-          <h1 className="text-3xl mb-10">About</h1>
+          <h1 className="text-3xl mb-10 uppercase">About</h1>
           <SanityImage
             {...aboutImage}
             width="500"

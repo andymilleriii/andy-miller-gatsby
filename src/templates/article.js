@@ -19,22 +19,23 @@ export const query = graphql`
 `
 
 const Article = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <main className="grid grid-cols-12">
-          <div className="col-span-full row-start-1 row-span-1"></div>
-        <article className="col-start-4 col-span-6 row-start-1">
+        <article className="col-start-4 col-span-6 row-start-2">
           <SanityImage
             {...data.sanityPost.mainImage}
             alt="data.sanityPost.title"
           ></SanityImage>
-          <h1 className="text-3xl my-10">{data.sanityPost.title}</h1>
+          <h1 className="text-4xl my-14 uppercase tracking-wider">{data.sanityPost.title}</h1>
+          <hr className="my-14 border-red-900 border-solid"></hr>
           <PortableText
             className="portable-text"
             content={data.sanityPost._rawBody}
             serializers={{
-              link: props => <a className="text-red-700 underline" {...props} />
+              link: (props) => (
+                <a className="text-red-700 underline" {...props} />
+              ),
             }}
           ></PortableText>
         </article>
