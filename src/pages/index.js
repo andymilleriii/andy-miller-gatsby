@@ -78,8 +78,10 @@ const IndexPage = ({ data }) => {
           alt="profile"
           className="grid-image bg-gray-100 rounded-md md:mb-5 h-500px w-full object-cover"
         ></SanityImage>
-        <div className="grid-title">
-          <h1 className="text-3xl sm:text-7xl font-thin">{aboutHeader}</h1>
+        <div className="grid-title text-center md:text-left">
+          <h1 className="text-3xl sm:text-7xl font-thin uppercase">
+            {aboutHeader}
+          </h1>
           <h2 className="text-lg sm:text-xl md:text-4xl text-gray-700 mt-5 font-light">
             {aboutSubHeader}
           </h2>

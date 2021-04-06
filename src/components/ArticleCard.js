@@ -13,7 +13,7 @@ const ArticleCard = ({post}) => {
       ></SanityImage>
       <div className="p-5 h-full">
         <h2 className="text-gray-600 text-sm mb-4">{post.date}</h2>
-        <h1 className="font-medium text-lg tracking-widest mb-5 uppercase">
+        <h1 className="font-medium text-lg tracking-wider mb-5 uppercase">
           <Link to={"/articles/" + post.slug.current}>{post.title}</Link>
         </h1>
         <p className="mb-6 text-lg overflow-hidden">{post.previewText}</p>
