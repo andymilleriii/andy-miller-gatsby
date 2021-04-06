@@ -38,6 +38,7 @@ export const query = graphql`
           current
         }
         mainImage {
+          asset {url}
           ...ImageWithPreview
         }
         id
@@ -63,7 +64,22 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
+      <Helmet
+        meta={[
+          {
+            property: `og:title`,
+            content: "Andy Miller III",
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            property: `og:image`,
+            content: mainImage.asset.url,
+          },
+        ]}
+      >
         <title>Andy Miller III - Home</title>
         <script
           type="text/javascript"

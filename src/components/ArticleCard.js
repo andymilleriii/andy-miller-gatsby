@@ -9,7 +9,7 @@ const ArticleCard = ({post}) => {
         {...post.mainImage}
         width="250"
         alt=""
-        className="lg:w-1/3 object-cover rounded-t-md lg:rounded-l-md"
+        className="lg:w-1/3 object-cover rounded-t-md lg:rounded-l-md lg:rounded-r-none"
       ></SanityImage>
       <div className="p-5 h-full">
         <h2 className="text-gray-600 text-sm mb-4">{post.date}</h2>
