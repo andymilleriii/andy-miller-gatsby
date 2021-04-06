@@ -71,20 +71,20 @@ const IndexPage = ({ data }) => {
           src="https://www.buzzsprout.com/362981.js?player=small&limit=1&container_id=buzzsprout-small-player-362981-limit-1"
         ></script>
       </Helmet>
-      <section className="grid grid-cols-12 gap-5">
+      <section className="grid mobile-template md:tablet-template lg:desktop-template gap-5">
         <SanityImage
           {...mainImage}
           width="500"
           alt="profile"
-          className="row-span-3 col-span-4 bg-gray-100 rounded-md mb-5 h-500px w-full object-cover"
+          className="grid-image bg-gray-100 rounded-md md:mb-5 h-500px w-full object-cover"
         ></SanityImage>
-        <div className="col-span-8">
+        <div className="grid-title">
           <h1 className="text-3xl sm:text-7xl font-thin">{aboutHeader}</h1>
-          <h2 className="text-xl sm:text-4xl text-gray-700 mt-5 font-light">
+          <h2 className="text-lg sm:text-xl md:text-4xl text-gray-700 mt-5 font-light">
             {aboutSubHeader}
           </h2>
         </div>
-        <div className="col-span-12 sm:row-span-2 sm:col-span-3 sm:-ml-10 px-5 -mt-14 sm:p-0 sm:mt-0">
+        <div className="grid-featured md:-ml-10">
           <Card
             eyebrow="Featured Article"
             title={
@@ -100,7 +100,7 @@ const IndexPage = ({ data }) => {
             <Link to={"/articles/" + featuredPost.slug.current}>Read More</Link>
           </Card>
         </div>
-        <div className="col-span-full px-5 sm:p-0 sm:row-span-2 sm:col-span-5 ">
+        <div className="grid-podcast">
           <Card
             eyebrow="Untitled Podcast"
             title="Listen to the Latest Episode"
@@ -113,20 +113,19 @@ const IndexPage = ({ data }) => {
 
       <hr className="my-14 border-red-900 border-solid"></hr>
 
-      <div className="grid grid-cols-12 gap-5">
-        <section className="col-start-1 col-end-7">
-          <h1 className="col-start-2 col-end-9 text-3xl mb-10 uppercase">
-            Recent Articles
-          </h1>
+      <div className="grid md:grid-cols-12 gap-5">
+        <section className="col-start-1 md:col-end-7">
+          <h1 className="text-3xl mb-10 uppercase">Recent Articles</h1>
           <div className="space-y-6">
             <ArticleCard post={posts[0]}></ArticleCard>
             <ArticleCard post={posts[1]}></ArticleCard>
           </div>
         </section>
 
-        <div className="w-px bg-red-900 col-start-8"></div>
+        <hr className="my-14 border-red-900 border-solid md:hidden"></hr>
+        <div className="w-px bg-red-900 col-start-8 hidden md:block"></div>
 
-        <section className="col-start-9 col-end-13">
+        <section className="md:col-start-9 md:col-end-13">
           <h1 className="text-3xl mb-10 uppercase">About</h1>
           <SanityImage
             {...aboutImage}

@@ -4,12 +4,12 @@ import SanityImage from 'gatsby-plugin-sanity-image'
 
 const ArticleCard = ({post}) => {
   return (
-    <div className="rounded-md shadow bg-gradient-to-b from-gray-100 to-gray-200 flex h-72">
+    <div className="rounded-md shadow bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col lg:flex-row">
       <SanityImage
         {...post.mainImage}
         width="250"
         alt=""
-        className="w-1/3 object-cover rounded-l-md"
+        className="lg:w-1/3 object-cover rounded-t-md lg:rounded-l-md"
       ></SanityImage>
       <div className="p-5 h-full">
         <h2 className="text-gray-600 text-sm mb-4">{post.date}</h2>

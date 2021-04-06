@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import PortableText from "react-portable-text"
 import SanityImage from "gatsby-plugin-sanity-image"
 
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 export const query = graphql`
   query($slug: String!) {
@@ -21,13 +21,13 @@ export const query = graphql`
 const Article = ({ data }) => {
   return (
     <Layout>
-      <main className="grid grid-cols-12">
-        <article className="col-start-4 col-span-6 row-start-2">
+      <main className="w-full">
+        <article className="max-w-3xl mx-auto">
           <SanityImage
             {...data.sanityPost.mainImage}
             alt="data.sanityPost.title"
           ></SanityImage>
-          <h1 className="text-4xl my-14 uppercase tracking-wider">{data.sanityPost.title}</h1>
+          <h1 className="text-2xl lg:text-4xl my-14 uppercase tracking-wider">{data.sanityPost.title}</h1>
           <hr className="my-14 border-red-900 border-solid"></hr>
           <PortableText
             className="portable-text"

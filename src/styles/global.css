@@ -6,8 +6,36 @@ body {
   @apply bg-white;
 }
 
-.h-500px {
-  height: 500px;
+@layer utilities {
+    .grid-image{ grid-area: image; }
+    .grid-title{ grid-area: title; }
+    .grid-featured{ grid-area: featured; }
+    .grid-podcast{ grid-area: podcast; }
+    .grid-about{ grid-area: about; }
+    .grid-articles{ grid-area: articles; }
+  @variants responsive {
+    .h-500px {
+      height: 500px;
+    }
+    .desktop-template {
+        grid-template:
+        'image title title' auto
+        'image featured podcast' auto / 2fr 2fr 3fr;
+    }
+    .tablet-template {
+      grid-template:
+      'image title'
+      'image featured'
+      'podcast podcast'
+    }
+    .mobile-template {
+        grid-template:
+        'image'
+        'title'
+        'featured'
+        'podcast';
+    }
+  }
 }
 
 .portable-text p {
@@ -16,7 +44,7 @@ body {
 }
 
 #buzzsprout-small-player-362981-limit-1 {
-    min-height: 200px;
-    @apply bg-white;
-    @apply rounded-md;
+  min-height: 200px;
+  @apply bg-white;
+  @apply rounded-md;
 }

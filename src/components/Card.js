@@ -7,8 +7,8 @@ const Card = ({ eyebrow, title, classes, theme, children }) => {
         theme === "dark" ? "text-white" : ""
       }`}
     >
-      <h1 className="italic uppercase">{eyebrow}</h1>
-      <h2 className="font-medium text-lg tracking-widest mt-1 mb-4">{title}</h2>
+      <h1 className="italic">{eyebrow}</h1>
+      <h2 className="font-medium lg:text-lg uppercase tracking-wider mt-1 mb-4">{title}</h2>
       <div>{children}</div>
     </div>
   )

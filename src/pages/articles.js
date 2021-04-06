@@ -1,8 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import { Helmet } from "react-helmet"
-import { graphql, Link } from "gatsby"
-import SanityImage from "gatsby-plugin-sanity-image"
+import { graphql } from "gatsby"
 import ArticleCard from "../components/ArticleCard"
 
 const ArticlesPage = ({ data }) => {
@@ -17,7 +16,7 @@ const ArticlesPage = ({ data }) => {
       </Helmet>
       <h1 className="text-4xl">Articles</h1>
       <hr className="my-14 border-red-900 border-solid"></hr>
-      <div className="flex space-x-5">
+      <div className="flex flex-col md:flex-row md:space-x-5 space-y-5 md:space-y-0">
         {posts.map((post) => (
           <ArticleCard post={post}></ArticleCard>
         ))}
