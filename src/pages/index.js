@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
 import SanityImage from "gatsby-plugin-sanity-image"
 import ArticleCard from "../components/ArticleCard"
+import PodcastPlayer from '../components/PodcastPlayer'
 
 export const query = graphql`
   {
@@ -81,11 +82,6 @@ const IndexPage = ({ data }) => {
         ]}
       >
         <title>Andy Miller III - Home</title>
-        <script
-          type="text/javascript"
-          charset="utf-8"
-          src="https://www.buzzsprout.com/362981.js?player=small&limit=1&container_id=buzzsprout-small-player-362981-limit-1"
-        ></script>
       </Helmet>
       <section className="grid mobile-template md:tablet-template lg:desktop-template gap-5">
         <SanityImage
@@ -124,7 +120,7 @@ const IndexPage = ({ data }) => {
             title="Listen to the Latest Episode"
             classes="bg-gradient-to-b from-gray-100 to-gray-200"
           >
-            <div id="buzzsprout-small-player-362981-limit-1"></div>
+            <PodcastPlayer></PodcastPlayer>
           </Card>
         </div>
       </section>

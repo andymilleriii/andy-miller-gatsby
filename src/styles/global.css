@@ -43,7 +43,7 @@ body {
   @apply text-lg;
 }
 
-#buzzsprout-small-player-362981-limit-1 {
+#buzzsprout {
   min-height: 200px;
   @apply bg-white;
   @apply rounded-md;
