@@ -16,7 +16,7 @@ const ArticlesPage = ({ data }) => {
       </Helmet>
       <h1 className="text-4xl uppercase">Articles</h1>
       <hr className="my-14 border-red-900 border-solid"></hr>
-      <div className="flex flex-col md:flex-row md:space-x-5 space-y-5 md:space-y-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {posts.map((post) => (
           <ArticleCard post={post}></ArticleCard>
         ))}

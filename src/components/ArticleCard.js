@@ -1,18 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
-import SanityImage from 'gatsby-plugin-sanity-image'
+import SanityImage from "gatsby-plugin-sanity-image"
 
-const ArticleCard = ({post}) => {
+const ArticleCard = ({ post }) => {
   return (
-    <div className="rounded-md shadow bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col lg:flex-row">
-      <SanityImage
-        {...post.mainImage}
-        width="250"
-        alt=""
-        className="lg:w-1/3 object-cover rounded-t-md lg:rounded-l-md lg:rounded-r-none"
-      ></SanityImage>
+    <div className="rounded-md shadow bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col xl:flex-row xl:h-72">
+      <div  className="h-60 w-full xl:h-full xl:w-60">
+        <SanityImage
+          {...post.mainImage}
+          width="250"
+          alt={post.title}
+          className="w-full h-full object-cover rounded-t-md xl:rounded-l-md xl:rounded-r-none"
+        ></SanityImage>
+      </div>
       <div className="p-5 h-full">
-        <h2 className="text-gray-600 text-sm mb-4">{post.date}</h2>
+        <h2 className="text-gray-600 text-sm mb-4">{post.publishedAt}</h2>
         <h1 className="font-medium text-lg tracking-wider mb-5 uppercase">
           <Link to={"/articles/" + post.slug.current}>{post.title}</Link>
         </h1>
