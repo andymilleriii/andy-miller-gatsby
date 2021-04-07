@@ -7,7 +7,7 @@ const Navbar = () => {
       <Link to="/" className="text-2xl font-medium tracking-wider">
         ANDY MILLER III
       </Link>
-      <nav className="md:text-lg space-x-5 tracking-wide">
+      <nav className="md:text-lg space-x-3 md:space-x-5 tracking-wide">
         <Link to="/" activeClassName="underline">
           HOME
         </Link>
