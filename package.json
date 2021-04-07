@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "gatsby": "^3.1.1",
+    "gatsby-plugin-gatsby-cloud": "^2.2.0",
     "gatsby-plugin-image": "^1.1.2",
     "gatsby-plugin-react-helmet": "^4.1.0",
     "gatsby-plugin-sanity-image": "^0.6.0",
