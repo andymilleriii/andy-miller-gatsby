@@ -94,7 +94,7 @@ const IndexPage = ({ data }) => {
           <h1 className="text-3xl sm:text-7xl font-thin uppercase">
             {aboutHeader}
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-4xl text-gray-700 mt-5 font-light">
+          <h2 className="text-base sm:text-xl md:text-4xl text-gray-700 mt-5 font-light">
             {aboutSubHeader}
           </h2>
         </div>
