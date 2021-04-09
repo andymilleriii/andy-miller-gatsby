@@ -86,7 +86,7 @@ const IndexPage = ({ data }) => {
       <section className="grid mobile-template md:tablet-template lg:desktop-template gap-5">
         <SanityImage
           {...mainImage}
-          width="500"
+          width="600"
           alt="profile"
           className="grid-image bg-gray-100 rounded-md md:mb-5 h-500px w-full object-cover"
         ></SanityImage>
