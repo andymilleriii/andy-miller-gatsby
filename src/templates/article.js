@@ -49,7 +49,9 @@ const Article = ({ data }) => {
         <article className="max-w-2xl mx-auto">
           <SanityImage
             {...data.sanityPost.mainImage}
-            alt="data.sanityPost.title"
+            width="800"
+            alt={data.sanityPost.title}
+            className="w-full"
           ></SanityImage>
           <h1 className="text-2xl lg:text-4xl mt-14 uppercase tracking-wider">
             {data.sanityPost.title}
