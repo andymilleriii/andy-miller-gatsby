@@ -2,39 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-white;
-  @apply min-h-screen;
-}
-
 @layer utilities {
-    .grid-image{ grid-area: image; }
-    .grid-title{ grid-area: title; }
-    .grid-featured{ grid-area: featured; }
-    .grid-podcast{ grid-area: podcast; }
-    .grid-about{ grid-area: about; }
-    .grid-articles{ grid-area: articles; }
+  .grid-image {
+    grid-area: image;
+  }
+  .grid-title {
+    grid-area: title;
+  }
+  .grid-featured {
+    grid-area: featured;
+  }
+  .grid-podcast {
+    grid-area: podcast;
+  }
+  .grid-about {
+    grid-area: about;
+  }
+  .grid-articles {
+    grid-area: articles;
+  }
+  .min-h-70vh {
+    min-height: 70vh;
+  }
   @variants responsive {
     .h-500px {
       height: 500px;
     }
     .desktop-template {
-        grid-template:
-        'image title title' auto
-        'image featured podcast' auto / 2fr 2fr 3fr;
+      grid-template:
+        "image title title" auto
+        "image featured podcast" auto / 2fr 2fr 3fr;
     }
     .tablet-template {
       grid-template:
-      'image title'
-      'image featured'
-      'podcast podcast'
+        "image title"
+        "image featured"
+        "podcast podcast";
     }
     .mobile-template {
-        grid-template:
-        'image'
-        'title'
-        'featured'
-        'podcast';
+      grid-template:
+        "image"
+        "title"
+        "featured"
+        "podcast";
     }
   }
 }
@@ -73,3 +83,4 @@ body {
   @apply bg-white;
   @apply rounded-md;
 }
+

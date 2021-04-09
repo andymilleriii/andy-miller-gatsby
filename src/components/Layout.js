@@ -6,9 +6,9 @@ const Layout = ({ children }) => {
     <>
       <Navbar></Navbar>
       <div className="container">
-        <div className="">{children}</div>
+        <div className="min-h-70vh">{children}</div>
       </div>
-      <div className=" bg-gray-800 text-white mt-32">
+      <div className="bg-gray-800 text-white mt-16 md:mt-32">
         <div className="container flex flex-col md:flex-row justify-center md:justify-between h-24 items-center">
           <p>Copyright © 2021 Andrew S. Miller III</p>
           <p>Contact information</p>
