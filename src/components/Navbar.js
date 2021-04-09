@@ -7,20 +7,38 @@ const Navbar = () => {
       <Link to="/" className="text-2xl font-medium tracking-wider">
         ANDY MILLER III
       </Link>
-      <nav className="md:text-lg space-x-3 md:space-x-5 tracking-wide">
+      <nav className="md:text-lg space-x-3 md:space-x-5 tracking-wide uppercase flex">
         <Link to="/" activeClassName="underline">
-          HOME
+          Home
         </Link>
         <Link
           to="/articles/"
           activeClassName="underline"
           partiallyActive={true}
         >
-          ARTICLES
+          Articles
         </Link>
-        <Link activeClassName="underline">MEDIA</Link>
-        <Link activeClassName="underline">ABOUT</Link>
-        <Link activeClassName="underline">CONTACT</Link>
+        <div className="relative group">
+          <Link activeClassName="underline" className="cursor-default">Media</Link>
+          <div className="absolute z-10 bg-white hidden group-hover:flex flex-col p-3 -left-3 space-y-2 rounded">
+            <Link to="/media/podcast" activeClassName="underline">Podcast</Link>
+            <Link to="/media/videos" activeClassName="underline">Videos</Link>
+            <Link to="/media/sermons" activeClassName="underline">Sermons</Link>
+          </div>
+        </div>
+        <div className="relative group">
+          <Link activeClassName="underline" className="cursor-default">About</Link>
+          <ul className="absolute z-10 bg-white hidden group-hover:block p-3 -left-3 space-y-2 rounded">
+            <li>
+              <Link to="/about/bio" activeClassName="underline">Bio</Link>
+            </li>
+            <li>
+              <Link to="/about/speaking-request" activeClassName="underline" className='whitespace-nowrap'>Speaking Request</Link>
+            </li>
+
+          </ul>
+        </div>
+        <Link to="/contact" activeClassName="underline">Contact</Link>
       </nav>
     </header>
   )
