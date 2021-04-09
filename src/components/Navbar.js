@@ -11,7 +11,11 @@ const Navbar = () => {
         <Link to="/" activeClassName="underline">
           HOME
         </Link>
-        <Link to="/articles/" activeClassName="underline">
+        <Link
+          to="/articles/"
+          activeClassName="underline"
+          partiallyActive={true}
+        >
           ARTICLES
         </Link>
         <Link activeClassName="underline">MEDIA</Link>
