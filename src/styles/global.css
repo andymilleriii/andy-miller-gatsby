@@ -4,6 +4,7 @@
 
 body {
   @apply bg-white;
+  @apply min-h-screen;
 }
 
 @layer utilities {
@@ -41,6 +42,30 @@ body {
 .portable-text p {
   @apply mb-5;
   @apply text-lg;
+}
+
+.portable-text h1 {
+  @apply mt-3;
+  @apply mb-5;
+  @apply text-5xl;
+}
+
+.portable-text h2 {
+  @apply mt-3;
+  @apply mb-5;
+  @apply text-4xl;
+}
+
+.portable-text h3 {
+  @apply mt-3;
+  @apply mb-5;
+  @apply text-3xl;
+}
+
+.portable-text h4 {
+  @apply mt-3;
+  @apply mb-5;
+  @apply text-2xl;
 }
 
 #buzzsprout {
