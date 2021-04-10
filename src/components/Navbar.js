@@ -35,6 +35,9 @@ const Navbar = () => {
             <Link to="/media/videos" activeClassName="underline">
               Videos
             </Link>
+            <Link to="/media/books" activeClassName="underline">
+              Books
+            </Link>
           </div>
         </div>
         <div className="relative group">
