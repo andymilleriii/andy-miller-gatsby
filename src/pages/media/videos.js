@@ -26,23 +26,21 @@ const VideoPage = ({
       <h1 className="text-4xl uppercase">Videos</h1>
       <hr className="my-14 border-red-900 border-solid"></hr>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
-        {videoLinks.map((link) => {
-          return (
-            <div>
-              <h1 className="overflow-ellipsis overflow-hidden whitespace-nowrap text-xl mb-6 w-11/12">
-                <a
-                  href={link.url}
-                  key={link._key}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {link.title}
-                </a>
-              </h1>
-              <YoutubeEmbed embedId={getYouTubeId(link.url)}></YoutubeEmbed>
-            </div>
-          )
-        })}
+        {videoLinks.map((link) => (
+          <div>
+            <h1 className="overflow-ellipsis overflow-hidden whitespace-nowrap text-xl mb-6 w-11/12">
+              <a
+                href={link.url}
+                key={link._key}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {link.title}
+              </a>
+            </h1>
+            <YoutubeEmbed embedId={getYouTubeId(link.url)}></YoutubeEmbed>
+          </div>
+        ))}
       </div>
     </Layout>
   )
