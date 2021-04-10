@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
-import PortableText from "react-portable-text"
+import FormattedPortableText from "../components/FormattedPortableText"
 import SanityImage from "gatsby-plugin-sanity-image"
 import { Helmet } from "react-helmet"
 
@@ -9,9 +9,11 @@ import { graphql } from "gatsby"
 export const query = graphql`
   query($slug: String!) {
     sanityPost(slug: { current: { eq: $slug } }) {
-      _rawBody
+      _rawBody(resolveReferences: { maxDepth: 5 })
       mainImage {
-        asset {url}
+        asset {
+          url
+        }
         ...ImageWithPreview
       }
       publishedAt(formatString: "MMMM D YYYY")
@@ -41,8 +43,8 @@ const Article = ({ data }) => {
           },
           {
             property: `og:description`,
-            content: data.sanityPost.previewText
-          }
+            content: data.sanityPost.previewText,
+          },
         ]}
       />
       <main className="w-full">
@@ -53,20 +55,14 @@ const Article = ({ data }) => {
             alt={data.sanityPost.title}
             className="w-full"
           ></SanityImage>
-          <h1 className="text-2xl lg:text-4xl mt-14 uppercase tracking-wider">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl mt-14 uppercase tracking-wider">
             {data.sanityPost.title}
           </h1>
           <h2 className="text-red-800 mt-3">{data.sanityPost.publishedAt}</h2>
           <hr className="my-14 border-red-900 border-solid"></hr>
-          <PortableText
-            className="portable-text"
+          <FormattedPortableText
             content={data.sanityPost._rawBody}
-            serializers={{
-              link: (props) => (
-                <a className="text-red-700 underline" {...props} />
-              ),
-            }}
-          ></PortableText>
+          ></FormattedPortableText>
         </article>
       </main>
     </Layout>
