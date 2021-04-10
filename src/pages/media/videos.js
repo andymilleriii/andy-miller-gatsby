@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../../components/Layout"
+import YoutubeEmbed from "../../components/YouTubeEmbed.js"
 import { graphql } from "gatsby"
+import getYouTubeId from "get-youtube-id"
 
 export const query = graphql`
   {
@@ -14,13 +16,33 @@ export const query = graphql`
   }
 `
 
-const VideoPage = () => {
+const VideoPage = ({
+  data: {
+    sanityVideoPage: { videoLinks },
+  },
+}) => {
   return (
     <Layout>
       <h1 className="text-4xl uppercase">Videos</h1>
       <hr className="my-14 border-red-900 border-solid"></hr>
-      <div className="grid grid-cols-3">
-        
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
+        {videoLinks.map((link) => {
+          return (
+            <div>
+              <h1 className="overflow-ellipsis overflow-hidden whitespace-nowrap text-xl mb-6 w-11/12">
+                <a
+                  href={link.url}
+                  key={link._key}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.title}
+                </a>
+              </h1>
+              <YoutubeEmbed embedId={getYouTubeId(link.url)}></YoutubeEmbed>
+            </div>
+          )
+        })}
       </div>
     </Layout>
   )
