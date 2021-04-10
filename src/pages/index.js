@@ -153,6 +153,7 @@ const IndexPage = ({ data }) => {
           <div className="space-y-6">
             {posts
               .filter((post) => post.id !== featuredPost.id)
+              .slice(0,2)
               .map((post) => (
                 <ArticleCard post={post}></ArticleCard>
               ))}
