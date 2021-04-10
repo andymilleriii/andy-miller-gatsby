@@ -13,14 +13,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     `gatsby-plugin-gatsby-cloud`,
     "gatsby-plugin-image",
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
-      },
-    },
     "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-sanity-image",

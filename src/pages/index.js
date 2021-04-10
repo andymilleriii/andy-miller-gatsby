@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
 import SanityImage from "gatsby-plugin-sanity-image"
 import ArticleCard from "../components/ArticleCard"
-import PodcastPlayer from '../components/PodcastPlayer'
+import PodcastPlayer from "../components/PodcastPlayer"
 
 export const query = graphql`
   {
@@ -39,7 +39,9 @@ export const query = graphql`
           current
         }
         mainImage {
-          asset {url}
+          asset {
+            url
+          }
           ...ImageWithPreview
         }
         id
@@ -82,6 +84,24 @@ const IndexPage = ({ data }) => {
         ]}
       >
         <title>Andy Miller III - Home</title>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="../static/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="../static/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="../static/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest"></link>
       </Helmet>
       <section className="grid mobile-template md:tablet-template lg:desktop-template gap-5">
         <SanityImage
