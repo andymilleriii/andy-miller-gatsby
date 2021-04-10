@@ -5,12 +5,15 @@ import SanityImage from "gatsby-plugin-sanity-image"
 const ArticleCard = ({ post }) => {
   return (
     <div className="rounded-md  shadow bg-gradient-to-b from-gray-100 to-gray-200 flex flex-wrap xl:h-80">
-      <SanityImage
-        {...post.mainImage}
-        width="250"
-        alt={post.title}
-        className="rounded-t-md xl:rounded-r-none xl:rounded-l-md object-cover w-full h-60 xl:w-1/3 xl:h-full"
-      ></SanityImage>
+      <Link to={"/articles/" + post.slug.current} className="w-full h-60 xl:w-1/3 xl:h-full">
+        <SanityImage
+          {...post.mainImage}
+          width="250"
+          alt={post.title}
+          className="rounded-t-md xl:rounded-r-none xl:rounded-l-md object-cover w-full h-full"
+        ></SanityImage>
+      </Link>
+
       <div className="p-5 xl:h-full w-full xl:w-2/3 flex flex-col place-content-between">
         <div>
           <h2 className="text-gray-600 text-sm mb-4">{post.publishedAt}</h2>
