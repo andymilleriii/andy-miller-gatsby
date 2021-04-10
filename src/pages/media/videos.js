@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../../components/Layout"
-import YoutubeEmbed from "../../components/YouTubeEmbed.js"
+import YoutubeEmbed from "../../components/YoutubeEmbed.js"
 import { graphql } from "gatsby"
 import getYouTubeID from "get-youtube-id"
 
