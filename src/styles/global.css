@@ -84,3 +84,6 @@
   @apply rounded-md;
 }
 
+#buzzsprout-large-player {
+  min-height: 375px;
+}
