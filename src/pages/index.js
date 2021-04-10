@@ -32,7 +32,7 @@ export const query = graphql`
         previewText
       }
     }
-    allSanityPost(limit: 2) {
+    allSanityPost(limit: 3) {
       posts: nodes {
         title
         slug {
@@ -151,8 +151,11 @@ const IndexPage = ({ data }) => {
         <section className="col-start-1 md:col-end-7">
           <h1 className="text-3xl mb-10 uppercase">Recent Articles</h1>
           <div className="space-y-6">
-            <ArticleCard post={posts[0]}></ArticleCard>
-            <ArticleCard post={posts[1]}></ArticleCard>
+            {posts
+              .filter((post) => post.id !== featuredPost.id)
+              .map((post) => (
+                <ArticleCard post={post}></ArticleCard>
+              ))}
           </div>
         </section>
 
