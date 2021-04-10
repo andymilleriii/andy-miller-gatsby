@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../../components/Layout"
 import YoutubeEmbed from "../../components/YouTubeEmbed.js"
 import { graphql } from "gatsby"
-// import getYouTubeId from "get-youtube-id"
+import getYouTubeId from "get-youtube-id"
 
 export const query = graphql`
   {
@@ -38,7 +38,7 @@ const VideoPage = ({
                 {link.title}
               </a>
             </h1>
-            {/* <YoutubeEmbed embedId={getYouTubeId(link.url)}></YoutubeEmbed> */}
+            <YoutubeEmbed embedId={getYouTubeId(link.url)}></YoutubeEmbed>
           </div>
         ))}
       </div>
