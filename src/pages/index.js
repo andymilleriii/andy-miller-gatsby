@@ -63,7 +63,6 @@ const IndexPage = ({ data }) => {
       aboutContent,
       aboutSubHeader,
       featuredPost,
-      excerpt
     },
     allSanityPost: { posts },
   } = data
