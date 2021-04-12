@@ -24,7 +24,7 @@ const Navbar = () => {
             to="/media"
             activeClassName="underline"
             partiallyActive={true}
-            className="cursor-default"
+            className="cursor-default group-hover:text-gray-500 group-hover:no-underline"
           >
             Media
           </Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
             to="/about"
             activeClassName="underline"
             partiallyActive={true}
-            className="cursor-default"
+            className="cursor-default group-hover:text-gray-500 group-hover:no-underline"
           >
             About
           </Link>
