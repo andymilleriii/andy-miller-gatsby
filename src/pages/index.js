@@ -88,7 +88,7 @@ const IndexPage = ({ data }) => {
       >
         <title>Andy Miller III - Home</title>
       </Helmet>
-      <section className="grid mobile-template md:tablet-template lg:desktop-template gap-5">
+      <section className="grid mobile-template md:tablet-template xl:desktop-template gap-5">
         <SanityImage
           {...mainImage}
           width="600"
@@ -142,10 +142,10 @@ const IndexPage = ({ data }) => {
 
       <hr className="my-14 border-red-900 border-solid"></hr>
 
-      <div className="grid md:grid-cols-12 gap-5">
-        <section className="col-start-1 md:col-end-7">
+      <div className="grid xl:grid-cols-12 gap-5">
+        <section className="col-start-1 xl:col-end-7">
           <h1 className="text-3xl mb-10 uppercase">Recent Articles</h1>
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-6">
             {posts
               .filter((post) => post.id !== featuredPost.id)
               .slice(0, 2)
@@ -155,18 +155,21 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
 
-        <hr className="my-14 border-red-900 border-solid md:hidden"></hr>
-        <div className="w-px bg-red-900 col-start-8 hidden md:block"></div>
+        <hr className="my-14 border-red-900 border-solid xl:hidden"></hr>
+        <div className="w-px bg-red-900 xl:col-start-8 hidden xl:block"></div>
 
-        <section className="md:col-start-9 md:col-end-13">
+        <section className= "xl:col-start-9 xl:col-end-13">
           <h1 className="text-3xl mb-10 uppercase">About</h1>
-          <SanityImage
+          <div className="block md:flex xl:block md:space-x-6 xl:space-x-0">
+            <SanityImage
             {...aboutImage}
             width="500"
-            className="rounded-md"
+            className="rounded-md w-full md:w-80 xl:w-full object-cover"
             alt="Andy Miller and Family"
           ></SanityImage>
           <p className="text-lg mt-5">{aboutContent}</p>
+          </div>
+
         </section>
       </div>
     </Layout>
