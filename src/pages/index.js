@@ -126,18 +126,28 @@ const IndexPage = ({ data }) => {
                 {featuredPost.title}
               </Link>
             }
+            footer={
+              <Link to={"/articles/" + featuredPost.slug.current}>
+                Read More
+              </Link>
+            }
             classes="bg-gradient-to-b from-red-800 to-red-900"
             theme="dark"
           >
-            <p className="text-lg">{featuredPost.previewText}</p>
-            <br></br>
-            <Link to={"/articles/" + featuredPost.slug.current}>Read More</Link>
+
+              <p className="text-lg">{featuredPost.previewText}</p>
+            
           </Card>
         </div>
         <div className="grid-podcast">
           <Card
             eyebrow="Untitled Podcast"
             title="Listen to the Latest Episode"
+            footer={
+              <Link to="/media/podcast" className="mt-5">
+                All Episodes
+              </Link>
+            }
             classes="bg-gradient-to-b from-gray-100 to-gray-200"
           >
             <PodcastPlayer></PodcastPlayer>
@@ -153,7 +163,7 @@ const IndexPage = ({ data }) => {
           <div className="space-y-6">
             {posts
               .filter((post) => post.id !== featuredPost.id)
-              .slice(0,2)
+              .slice(0, 2)
               .map((post) => (
                 <ArticleCard post={post}></ArticleCard>
               ))}

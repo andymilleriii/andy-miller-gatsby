@@ -1,18 +1,19 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import {Link} from "gatsby"
 
 const PodcastPlayer = () => {
   return (
-    <div>
+    <div className="flex flex-col place-content-between">
       <Helmet>
-          <script
-            type="text/javascript"
-            charset="utf-8"
-            defer
-            src="https://www.buzzsprout.com/362981.js?player=small&limit=1&container_id=buzzsprout"
-          ></script>
-        </Helmet>
-        <div id="buzzsprout"></div>
+        <script
+          type="text/javascript"
+          charset="utf-8"
+          defer
+          src="https://www.buzzsprout.com/362981.js?player=small&limit=1&container_id=buzzsprout"
+        ></script>
+      </Helmet>
+      <div id="buzzsprout"></div>
       {/* <iframe
         className="w-full overflow-hidden"
         id="buzzsprout"
