@@ -32,7 +32,7 @@ export const query = graphql`
         previewText
       }
     }
-    allSanityPost(limit: 3) {
+    allSanityPost(sort: { fields: publishedAt, order: DESC }, limit: 3) {
       posts: nodes {
         title
         slug {

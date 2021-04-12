@@ -27,7 +27,7 @@ const ArticlesPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allSanityPost(limit: 10) {
+    allSanityPost(sort: { fields: publishedAt, order: DESC }) {
       nodes {
         title
         slug {
