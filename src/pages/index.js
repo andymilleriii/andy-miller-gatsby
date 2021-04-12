@@ -29,6 +29,7 @@ export const query = graphql`
           current
         }
         title
+        excerpt(limit: 200)
         previewText
       }
     }
@@ -47,6 +48,7 @@ export const query = graphql`
         id
         publishedAt(formatString: "MMMM D")
         previewText
+        excerpt(limit: 180)
       }
     }
   }
@@ -61,6 +63,7 @@ const IndexPage = ({ data }) => {
       aboutContent,
       aboutSubHeader,
       featuredPost,
+      excerpt
     },
     allSanityPost: { posts },
   } = data
@@ -117,7 +120,7 @@ const IndexPage = ({ data }) => {
             theme="dark"
           >
 
-              <p className="text-lg">{featuredPost.previewText}</p>
+              <p className="text-lg">{featuredPost.previewText ? featuredPost.previewText : featuredPost.excerpt}</p>
 
           </Card>
         </div>

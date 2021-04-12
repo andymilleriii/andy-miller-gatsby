@@ -20,7 +20,7 @@ const ArticleCard = ({ post }) => {
           <h1 className="font-medium text-red-800 text-lg tracking-wider mb-5 uppercase">
             <Link to={"/articles/" + post.slug.current}>{post.title}</Link>
           </h1>
-          <p className="text-lg mb-6 overflow-hidden">{post.previewText}</p>
+          <p className="text-lg mb-6 overflow-hidden">{post.previewText ? post.previewText : post.excerpt}</p>
         </div>
 
         <Link

@@ -38,6 +38,7 @@ export const query = graphql`
         }
         id
         previewText
+        excerpt(limit: 180)
         publishedAt(formatString: "MMMM D YYYY")
       }
     }

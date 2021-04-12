@@ -19,6 +19,7 @@ export const query = graphql`
       publishedAt(formatString: "MMMM D YYYY")
       title
       previewText
+      excerpt
     }
   }
 `
@@ -43,7 +44,7 @@ const Article = ({ data }) => {
           },
           {
             property: `og:description`,
-            content: data.sanityPost.previewText,
+            content: data.sanityPost.excerpt,
           },
         ]}
       />

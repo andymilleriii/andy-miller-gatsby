@@ -21,5 +21,11 @@ module.exports = {
         dataset: "production",
       },
     },
+    {
+      resolve: `gatsby-transform-portable-text`,
+      options: {
+        extendTypes: [{ typeName: `SanityPost`, contentFieldName: "body" }],
+      },
+    },
   ],
 }
