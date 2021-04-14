@@ -17,10 +17,7 @@ const NavDropdown = ({ label, path, links }) => {
   }
 
   return (
-    <div
-      className="relative group"
-      onBlur={handleBlur}
-      >
+    <div role="button" className="relative group" onBlur={handleBlur}>
       <Link
         onFocus={() => setState("visible")}
         onClick={(e) => e.preventDefault()}
