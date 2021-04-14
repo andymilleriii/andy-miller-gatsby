@@ -4,7 +4,7 @@ import FormattedPortableText from "../components/FormattedPortableText"
 import SanityImage from "gatsby-plugin-sanity-image"
 import { Helmet } from "react-helmet"
 
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 export const query = graphql`
   query($slug: String!) {
@@ -48,8 +48,8 @@ const Article = ({ data }) => {
           },
         ]}
       />
-      <main className="w-full">
-        <article className="max-w-2xl mx-auto">
+      <main className="max-w-2xl mx-auto">
+        <article>
           <SanityImage
             {...data.sanityPost.mainImage}
             width="800"
@@ -65,6 +65,12 @@ const Article = ({ data }) => {
             content={data.sanityPost._rawBody}
           ></FormattedPortableText>
         </article>
+        <div className="mt-12 -mb-12">
+          <Link to="/articles" className="text-red-800">
+          Back to Articles
+        </Link>
+        </div>
+
       </main>
     </Layout>
   )
