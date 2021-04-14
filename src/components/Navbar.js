@@ -5,8 +5,8 @@ import NavDropdown from "./NavDropdown"
 const Navbar = () => {
   return (
     <header className="container flex flex-col md:flex-row justify-between items-center h-20 mt-5 mb-12">
-      <Link to="/" className="text-2xl font-medium tracking-wider">
-        ANDY MILLER III
+      <Link to="/" className="text-2xl font-medium tracking-wider font-serif">
+        Andy Miller III
       </Link>
       <nav className="md:text-lg space-x-3 md:space-x-5 tracking-wide uppercase flex">
         <Link to="/" activeClassName="underline">
