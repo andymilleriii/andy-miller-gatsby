@@ -17,6 +17,7 @@ const ContactPage = () => {
             type="text"
             name="name"
             id="name"
+            required
             className="mt-1 block w-full rounded"
           />
         </label>
@@ -26,6 +27,7 @@ const ContactPage = () => {
             type="email"
             name="email"
             id="email"
+            required
             className="mt-1 block w-full rounded"
           />
         </label>
@@ -35,6 +37,7 @@ const ContactPage = () => {
             type="text"
             name="subject"
             id="subject"
+            required
             className="mt-1 block w-full rounded"
           />
         </label>
@@ -44,6 +47,7 @@ const ContactPage = () => {
             name="message"
             id="message"
             rows="5"
+            required
             className="mt-1 block w-full rounded"
           />
         </label>

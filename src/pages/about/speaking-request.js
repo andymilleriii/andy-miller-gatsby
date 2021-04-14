@@ -17,6 +17,7 @@ const SpeakingRequestPage = () => {
             type="text"
             name="name"
             id="name"
+            required
             className="mt-1 block w-full rounded"
           />
         </label>
@@ -26,6 +27,7 @@ const SpeakingRequestPage = () => {
             type="email"
             name="email"
             id="email"
+            required
             className="mt-1 block w-full rounded"
           />
         </label>
@@ -48,6 +50,7 @@ const SpeakingRequestPage = () => {
             name="message"
             id="message"
             rows="5"
+            required
             className="mt-1 block w-full rounded"
           />
         </label>
