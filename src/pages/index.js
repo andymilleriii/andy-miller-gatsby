@@ -132,7 +132,7 @@ const IndexPage = ({ data }) => {
                 All Episodes
               </Link>
             }
-            classes="bg-gradient-to-b from-gray-100 to-gray-200"
+            classes="bg-gray-100"
           >
             <PodcastPlayer></PodcastPlayer>
           </Card>

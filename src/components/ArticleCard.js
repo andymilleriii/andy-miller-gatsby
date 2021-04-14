@@ -4,7 +4,7 @@ import SanityImage from "gatsby-plugin-sanity-image"
 
 const ArticleCard = ({ post }) => {
   return (
-    <div className="rounded-md  shadow bg-gradient-to-b from-gray-100 to-gray-200 flex flex-wrap xl:h-80">
+    <div className="rounded-md  shadow bg-gray-100 flex flex-wrap xl:h-80">
       <Link to={"/articles/" + post.slug.current} className="w-full h-60 xl:w-1/3 xl:h-full">
         <SanityImage
           {...post.mainImage}
