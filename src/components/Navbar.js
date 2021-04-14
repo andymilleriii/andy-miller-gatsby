@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import NavDropdown from "./NavDropdown"
 
 const Navbar = () => {
   return (
@@ -18,55 +19,23 @@ const Navbar = () => {
         >
           Articles
         </Link>
-        <div className="relative group">
-          <Link
-            onClick={(e) => e.preventDefault()}
-            to="/media"
-            activeClassName="underline"
-            partiallyActive={true}
-            className="cursor-default group-hover:text-gray-500 group-hover:no-underline"
-          >
-            Media
-          </Link>
-          <div className="absolute z-10 bg-white hidden group-hover:flex flex-col p-3 -left-3 space-y-2 rounded">
-            <Link to="/media/podcast" activeClassName="underline">
-              Podcast
-            </Link>
-            <Link to="/media/videos" activeClassName="underline">
-              Videos
-            </Link>
-            <Link to="/media/books" activeClassName="underline">
-              Books
-            </Link>
-          </div>
-        </div>
-        <div className="relative group">
-          <Link
-            onClick={(e) => e.preventDefault()}
-            to="/about"
-            activeClassName="underline"
-            partiallyActive={true}
-            className="cursor-default group-hover:text-gray-500 group-hover:no-underline"
-          >
-            About
-          </Link>
-          <ul className="absolute z-10 bg-white hidden group-hover:block p-3 -left-3 space-y-2 rounded">
-            <li>
-              <Link to="/about/bio" activeClassName="underline">
-                Bio
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about/speaking-request"
-                activeClassName="underline"
-                className="whitespace-nowrap"
-              >
-                Speaking Request
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <NavDropdown
+          label="Media"
+          path="media"
+          links={[
+            { path: "podcast", label: "Podcast" },
+            { path: "videos", label: "Videos" },
+            { path: "books", label: "Books" },
+          ]}
+        />
+        <NavDropdown
+          label="About"
+          path="about"
+          links={[
+            { path: "bio", label: "Bio" },
+            { path: "speaking-request", label: "Speaking Request" },
+          ]}
+        />
         <Link to="/contact" activeClassName="underline">
           Contact
         </Link>
