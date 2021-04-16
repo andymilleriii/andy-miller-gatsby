@@ -1,12 +1,19 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/Layout"
 
 const ContactPage = () => {
+  useEffect(() => {
+    clear()
+  })
+  const clear = () => {
+    document.getElementById("form").reset()
+  }
   return (
     <Layout>
       <h1 className="text-4xl uppercase">Contact</h1>
       <hr className="my-14 border-red-900 border-solid"></hr>
       <form
+        id="form"
         method="post"
         action="https://formspree.io/f/xrgrgjpn"
         className="block max-w-xl space-y-5"
