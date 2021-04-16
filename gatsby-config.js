@@ -27,5 +27,17 @@ module.exports = {
         extendTypes: [{ typeName: `SanityPost`, contentFieldName: "body" }],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Andy Miller III`,
+        short_name: `ASMIII`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `browser`,
+        icon: `static/android-chrome-512x512.png`
+      },
+    },
   ],
 }
