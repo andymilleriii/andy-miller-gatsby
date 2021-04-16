@@ -1,7 +1,13 @@
-import React from "react"
+import React, {useEffect} from "react"
 import Layout from "../../components/Layout"
 
 const SpeakingRequestPage = () => {
+  useEffect(() => {
+    clear()
+  })
+  const clear = () => {
+    document.getElementById("form").reset()
+  }
   return (
     <Layout>
       <h1 className="text-4xl uppercase">Speaking Requests</h1>
@@ -10,6 +16,7 @@ const SpeakingRequestPage = () => {
         method="post"
         action="https://formspree.io/f/xnqlqwdq"
         className="block max-w-xl space-y-5"
+        id="form"
       >
         <label className="block">
           <span className="text-gray-700">Full Name</span>
