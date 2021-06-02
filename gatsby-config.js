@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: process.env['SANITY_PROJECT_ID'],
+        projectId: 'o68n75np',
         dataset: "production",
       },
     },
@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sanity-image",
       options: {
-        projectId: process.env['SANITY_PROJECT_ID'],
+        projectId: 'o68n75np',
         dataset: "production",
       },
     },
