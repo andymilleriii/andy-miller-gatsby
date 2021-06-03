@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import { useForm } from "@formspree/react"
 
 const ContactPage = () => {
-  const [state, handleSubmit] = useForm("xrgrgjpn")
+  const [state, handleSubmit] = useForm("moqyezbw")
   return (
     <Layout>
       <h1 className="text-4xl uppercase">Contact</h1>
