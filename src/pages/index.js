@@ -141,7 +141,7 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
-      <hr className="my-14 border-red-900 border-solid"></hr>
+      <hr className="my-14 border-gray-500 border-solid"></hr>
 
       <div className="grid xl:grid-cols-12 gap-5">
         <section className="col-start-1 xl:col-end-7">
@@ -156,8 +156,8 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
 
-        <hr className="my-14 border-red-900 border-solid xl:hidden"></hr>
-        <div className="w-px bg-red-900 xl:col-start-8 hidden xl:block"></div>
+        <hr className="my-14 border-gray-500 border-solid xl:hidden"></hr>
+        <div className="w-px bg-gray-500 xl:col-start-8 hidden xl:block"></div>
 
         <section className= "xl:col-start-9 xl:col-end-13">
           <h1 className="text-3xl mb-10 uppercase">About</h1>
