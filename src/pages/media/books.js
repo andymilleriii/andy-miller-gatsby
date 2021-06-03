@@ -38,7 +38,8 @@ const BookPage = ({
             className="w-full"
           ></SanityImage>
           <div className="col-span-1 xl:col-span-2">
-            <h1 className="text-4xl mb-10">{book.title}</h1>
+            <h1 className="text-4xl font-serif mb-3">{book.title}</h1>
+            <h1 className="text-xl uppercase mb-7">{book.subtitle}</h1>
             <p className="text-lg mb-10">{book.description}</p>
             <a
               target="_blank"
@@ -46,7 +47,7 @@ const BookPage = ({
               href={book.link}
               className="text-red-800 border  bg-white border-red-800 text-center rounded-md py-2 px-4 uppercase hover:bg-red-50"
             >
-              Purchase
+              Learn More
             </a>
           </div>
         </div>
