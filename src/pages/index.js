@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
 import SanityImage from "gatsby-plugin-sanity-image"
 import ArticleCard from "../components/ArticleCard"
-import PodcastPlayer from "../components/PodcastPlayer"
 
 export const query = graphql`
   {
@@ -51,6 +50,9 @@ export const query = graphql`
         excerpt(limit: 180)
       }
     }
+    sanityPodcast {
+      title
+    }
   }
 `
 
@@ -64,7 +66,7 @@ const IndexPage = ({ data }) => {
       aboutSubHeader,
       featuredPost,
     },
-    allSanityPost: { posts },
+    allSanityPost: { posts }, sanityPodcast
   } = data
 
   return (
@@ -125,7 +127,7 @@ const IndexPage = ({ data }) => {
         </div>
         <div className="grid-podcast">
           <Card
-            eyebrow="Untitled Podcast"
+            eyebrow={sanityPodcast.title}
             title="Listen to the Latest Episode"
             footer={
               <Link to="/media/podcast" className="mt-5">
@@ -134,7 +136,7 @@ const IndexPage = ({ data }) => {
             }
             classes="bg-gray-100"
           >
-            <PodcastPlayer></PodcastPlayer>
+            <iframe title="podcast" width="100%" height="180" frameBorder="no" scrolling="no" seamless src="https://share.transistor.fm/e/more-to-the-story-with-dr-andy-miller/latest"></iframe>
           </Card>
         </div>
       </section>

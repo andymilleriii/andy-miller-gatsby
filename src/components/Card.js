@@ -14,7 +14,7 @@ const Card = ({ eyebrow, title, footer, classes, theme, children }) => {
         </h2>
         <div>{children}</div>
       </div>
-      <div>{footer}</div>
+      <div className="mt-4">{footer}</div>
     </div>
   )
 }
