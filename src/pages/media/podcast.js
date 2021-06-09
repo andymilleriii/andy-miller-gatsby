@@ -49,7 +49,7 @@ const PodcastPage = ({data:{sanityPodcast:{title, description, links}}}) => {
         ))}
       </div>
       <iframe title="podcast" width="100%" height="390" frameborder="no" scrolling="no" seamless src="https://share.transistor.fm/e/more-to-the-story-with-dr-andy-miller/playlist"></iframe>
-      <h1 className="text-4xl uppercase">Captain's Corner</h1>
+      <h1 className="text-4xl mt-14 uppercase">Captain's Corner</h1>
       <hr className="my-14 border-red-900 border-solid"></hr>
       <p className="text-xl my-14">Listen to an Archive of Captain's Corner</p>
       <div id="buzzsprout-large-player"></div>
