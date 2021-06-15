@@ -33,7 +33,8 @@ const Navbar = () => {
           path="about"
           links={[
             { path: "bio", label: "Bio" },
-            { path: "speaking-request", label: "Speaking Request" },
+            { path: "speaking-request", label: "Speaking Requests" },
+            { path: "email-list", label: "Email List" },
           ]}
         />
         <Link to="/contact" activeClassName="underline">
