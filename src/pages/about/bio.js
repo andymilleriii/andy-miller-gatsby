@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet";
 export const query = graphql`
   {
     sanityAbout {
-      _rawBio
+      _rawBio(resolveReferences: { maxDepth: 5 })
       image {
         asset {
           url
@@ -18,7 +18,7 @@ export const query = graphql`
       name
     }
   }
-`
+`;
 
 const BioPage = ({data:{sanityAbout:{_rawBio, image, name}}}) => {
   return (
