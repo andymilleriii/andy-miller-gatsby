@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
 import SanityImage from "gatsby-plugin-sanity-image"
 import ArticleCard from "../components/ArticleCard"
+import EmailListSubscribeForm from "../components/EmailListSubscribeForm"
 
 export const query = graphql`
   {
@@ -89,6 +90,10 @@ const IndexPage = ({ data }) => {
       >
         <title>Andy Miller III - Home</title>
       </Helmet>
+      <section className="bg-yellow-50 p-5 mb-12 rounded-md shadow text-sm md:text-md lg:text-lg flex justify-center space-x-5 items-center">
+          <p>Get my free video and pdf: <br className="block md:hidden"/> <strong className="text-md lg:text-lg">5 Steps to Deeper Preaching and Teaching</strong> </p> 
+          <Link to="/about/email-list" className="bg-yellow-200 rounded-lg px-3 py-2 min-w-max">Sign Up</Link>
+      </section>
       <section className="grid mobile-template md:tablet-template xl:desktop-template gap-5">
         <SanityImage
           {...mainImage}
