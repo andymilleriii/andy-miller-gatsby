@@ -21,7 +21,7 @@ const Navbar = () => {
         </Link>
         <Link
           className="hidden lg:block"
-          to="articles"
+          to="/articles"
           activeClassName="underline"
           partiallyActive={true}
         >
