@@ -31,7 +31,7 @@ const Navbar = () => {
           label="Media"
           path="media"
           links={[
-            { path: "articles", label: "Articles", hideOnLarge: true },
+            { path: "/articles", label: "Articles", hideOnLarge: true },
             { path: "/media/podcast", label: "Podcast" },
             { path: "/media/videos", label: "Videos" },
             { path: "/media/books", label: "Books" },
