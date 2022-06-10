@@ -42,9 +42,9 @@ const NavDropdown = ({ label, path, links }) => {
         {links.map((link) => (
           <li>
             <Link
-              to={"/" + path + "/" + link.path}
+              to={link.path}
               activeClassName="underline"
-              className="whitespace-nowrap"
+              className={`whitespace-nowrap ${link.hideOnLarge && "block lg:hidden"}`}
             >
               {link.label}
             </Link>

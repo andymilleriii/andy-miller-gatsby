@@ -13,7 +13,15 @@ const Navbar = () => {
           Home
         </Link>
         <Link
-          to="/articles/"
+          to="https://courses.andymilleriii.com/p/contender-going-deeper-in-the-book-of-jude"
+          activeClassName="underline"
+          partiallyActive={true}
+        >
+          Courses
+        </Link>
+        <Link
+          className="hidden lg:block"
+          to="/articles"
           activeClassName="underline"
           partiallyActive={true}
         >
@@ -23,18 +31,19 @@ const Navbar = () => {
           label="Media"
           path="media"
           links={[
-            { path: "podcast", label: "Podcast" },
-            { path: "videos", label: "Videos" },
-            { path: "books", label: "Books" },
+            { path: "/articles", label: "Articles", hideOnLarge: true },
+            { path: "/media/podcast", label: "Podcast" },
+            { path: "/media/videos", label: "Videos" },
+            { path: "/media/books", label: "Books" },
           ]}
         />
         <NavDropdown
           label="About"
           path="about"
           links={[
-            { path: "bio", label: "Bio" },
-            { path: "speaking-request", label: "Speaking Requests" },
-            { path: "email-list", label: "Email List" },
+            { path: "/about/bio", label: "Bio" },
+            { path: "/about/speaking-request", label: "Speaking Requests" },
+            { path: "/about/email-list", label: "Email List" },
           ]}
         />
         <Link to="/contact" activeClassName="underline">

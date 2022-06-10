@@ -25,7 +25,7 @@
     "gatsby-plugin-react-helmet": "^4.1.0",
     "gatsby-plugin-sanity-image": "^0.6.0",
     "gatsby-source-sanity": "^7.0.0",
-    "gatsby-transform-portable-text": "0.0.2",
+    "gatsby-transform-portable-text": "^0.0.2",
     "get-youtube-id": "^1.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
