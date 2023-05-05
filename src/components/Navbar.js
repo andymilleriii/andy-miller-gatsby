@@ -43,7 +43,7 @@ const Navbar = () => {
           links={[
             { path: "/about/bio", label: "Bio" },
             { path: "/about/speaking-request", label: "Speaking Requests" },
-            { path: "/about/email-list", label: "Email List" },
+            { path: "https://cdn.forms-content.sg-form.com/45038ab9-ea82-11ed-9cb2-9691665902a5", label: "Email List" },
           ]}
         />
         <Link to="/contact" activeClassName="underline">

@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <section className="bg-yellow-50 p-5 mb-12 rounded-md shadow text-sm md:text-md lg:text-lg flex justify-center space-x-5 items-center">
           <p>Get my free video and pdf: <br className="block md:hidden"/> <strong className="text-md lg:text-lg">5 Steps to Deeper Preaching and Teaching</strong> </p> 
-          <Link to="/about/email-list" className="bg-yellow-200 rounded-lg px-3 py-2 min-w-max">Sign Up</Link>
+        <Link to="https://cdn.forms-content.sg-form.com/45038ab9-ea82-11ed-9cb2-9691665902a5" className="bg-yellow-200 rounded-lg px-3 py-2 min-w-max">Sign Up</Link>
       </section>
       <section className="grid mobile-template md:tablet-template xl:desktop-template gap-5">
         <SanityImage
