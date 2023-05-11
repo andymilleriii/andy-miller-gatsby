@@ -12,13 +12,13 @@ const Navbar = () => {
         <Link to="/" activeClassName="underline">
           Home
         </Link>
-        <Link
-          to="https://courses.andymilleriii.com/p/contender-going-deeper-in-the-book-of-jude"
-          activeClassName="underline"
-          partiallyActive={true}
+        <a
+          className="hidden lg:block"
+          href="https://courses.andymilleriii.com/p/contender-going-deeper-in-the-book-of-jude"
+          target="_blank" rel="noopener noreferrer"
         >
           Courses
-        </Link>
+        </a>
         <Link
           className="hidden lg:block"
           to="/articles"
@@ -31,6 +31,7 @@ const Navbar = () => {
           label="Media"
           path="media"
           links={[
+            { path: "https://courses.andymilleriii.com/p/contender-going-deeper-in-the-book-of-jude", label: "Courses", hideOnLarge: true, external: true },
             { path: "/articles", label: "Articles", hideOnLarge: true },
             { path: "/media/podcast", label: "Podcast" },
             { path: "/media/videos", label: "Videos" },
@@ -43,12 +44,16 @@ const Navbar = () => {
           links={[
             { path: "/about/bio", label: "Bio" },
             { path: "/about/speaking-request", label: "Speaking Requests" },
-            { path: "https://cdn.forms-content.sg-form.com/45038ab9-ea82-11ed-9cb2-9691665902a5", label: "Email List" },
+            { path: "/contact", label: "Contact", hideOnLarge: false },
           ]}
         />
-        <Link to="/contact" activeClassName="underline">
+        <a target="_blank" rel="noopener noreferrer" href="https://cdn.forms-content.sg-form.com/45038ab9-ea82-11ed-9cb2-9691665902a5">
+          Email List
+        </a>
+        {/* <Link to="/contact" activeClassName="underline" className="hidden lg:block">
           Contact
-        </Link>
+        </Link> */}
+        <a target="_blank" rel="noopener noreferrer" href="https://www.paypal.com/donate/?hosted_button_id=2PWT3ZXQ4QRJE">Donate</a>
       </nav>
     </header>
   )

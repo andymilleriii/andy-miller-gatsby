@@ -3,7 +3,7 @@ import React from "react"
 const Card = ({ eyebrow, title, footer, classes, theme, children }) => {
   return (
     <div
-      class={`rounded-md h-full flex flex-col place-content-between shadow p-5 ${classes} ${
+      className={`rounded-md h-full flex flex-col place-content-between shadow p-5 ${classes} ${
         theme === "dark" ? "text-white" : ""
       }`}
     >

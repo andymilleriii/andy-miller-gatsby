@@ -52,7 +52,7 @@ const Article = ({ data }) => {
         <article>
           <SanityImage
             {...data.sanityPost.mainImage}
-            width="800"
+            width={800}
             alt={data.sanityPost.title}
             className="w-full"
           ></SanityImage>

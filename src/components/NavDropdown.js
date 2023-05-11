@@ -40,14 +40,23 @@ const NavDropdown = ({ label, path, links }) => {
         }
       >
         {links.map((link) => (
-          <li>
-            <Link
-              to={link.path}
-              activeClassName="underline"
-              className={`whitespace-nowrap ${link.hideOnLarge && "block lg:hidden"}`}
-            >
-              {link.label}
-            </Link>
+          <li key={link.path}>
+            {link.external ? (
+              <a
+                href={link.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`md:whitespace-nowrap ${link.hideOnLarge && "block lg:hidden"}`}
+              >{link.label}</a>
+            ) : (
+              <Link
+                to={link.path}
+                activeClassName="underline"
+                className={`md:whitespace-nowrap ${link.hideOnLarge && "block lg:hidden"}`}
+              >
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

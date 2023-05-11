@@ -46,7 +46,7 @@ const BioPage = ({data:{sanityAbout:{_rawBio, image, name}}}) => {
         <SanityImage
           {...image}
           alt={name}
-          width="400"
+          width={400}
           className="max-h-96 w-full object-cover rounded-md"
         ></SanityImage>
       </div>

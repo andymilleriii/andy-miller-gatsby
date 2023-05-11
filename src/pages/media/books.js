@@ -30,11 +30,11 @@ const BookPage = ({
       <hr className="my-14 border-red-900 border-solid"></hr>
       <div className="space-y-20">
       {books.map((book) => (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-14 mb-10">
+        <div key={book.title} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-14 mb-10">
           <SanityImage
             {...book.image}
             alt={book.title}
-            width="500"
+            width={500}
             className="w-full"
           ></SanityImage>
           <div className="col-span-1 xl:col-span-2">

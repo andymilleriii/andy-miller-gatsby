@@ -8,7 +8,7 @@ const ArticleCard = ({ post }) => {
       <Link to={"/articles/" + post.slug.current} className="w-full h-60 ">
         <SanityImage
           {...post.mainImage}
-          width="250"
+          width={400}
           alt={post.title}
           className="rounded-t-md object-cover w-full h-full"
         ></SanityImage>

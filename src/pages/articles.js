@@ -18,7 +18,7 @@ const ArticlesPage = ({ data }) => {
       <hr className="my-14 border-red-900 border-solid"></hr>
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5">
         {posts.map((post) => (
-          <ArticleCard post={post}></ArticleCard>
+          <ArticleCard key={post.id} post={post}></ArticleCard>
         ))}
       </div>
     </Layout>

@@ -41,12 +41,12 @@ const SpeakingRequestPage = () => {
               className="mt-1 block w-full rounded"
             />
           </label>
-          <label class="block">
-            <span class="text-gray-700">When is your event?</span>
+          <label className="block">
+            <span className="text-gray-700">When is your event?</span>
             <input
               type="date"
               name="event_date"
-              class="mt-1 block w-full rounded"
+              className="mt-1 block w-full rounded"
               id="date"
             />
           </label>

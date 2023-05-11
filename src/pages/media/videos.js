@@ -27,7 +27,7 @@ const VideoPage = ({
       <hr className="my-14 border-red-900 border-solid"></hr>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
         {videoLinks.map((link) => (
-          <div>
+          <div key={link._key}>
             <h1 className="overflow-ellipsis overflow-hidden whitespace-nowrap text-xl mb-6 w-11/12">
               <a
                 href={link.url}

@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
 import SanityImage from "gatsby-plugin-sanity-image"
 import ArticleCard from "../components/ArticleCard"
-import EmailListSubscribeForm from "../components/EmailListSubscribeForm"
 
 export const query = graphql`
   {
@@ -91,18 +90,18 @@ const IndexPage = ({ data }) => {
         <title>Andy Miller III - Home</title>
       </Helmet>
       <section className="bg-yellow-50 p-5 mb-12 rounded-md shadow text-sm md:text-md lg:text-lg flex justify-center space-x-5 items-center">
-          <p>Get my free video and pdf: <br className="block md:hidden"/> <strong className="text-md lg:text-lg">5 Steps to Deeper Preaching and Teaching</strong> </p> 
-        <Link to="https://cdn.forms-content.sg-form.com/45038ab9-ea82-11ed-9cb2-9691665902a5" className="bg-yellow-200 rounded-lg px-3 py-2 min-w-max">Sign Up</Link>
+        <p>Get my free video and pdf: <br className="block md:hidden" /> <strong className="text-md lg:text-lg">5 Steps to Deeper Preaching and Teaching</strong> </p>
+        <a target="_blank" rel="noopener noreferrer" href="https://cdn.forms-content.sg-form.com/45038ab9-ea82-11ed-9cb2-9691665902a5" className="bg-yellow-200 rounded-lg px-3 py-2 min-w-max">Sign Up</a>
       </section>
       <section className="grid mobile-template md:tablet-template xl:desktop-template gap-5">
         <SanityImage
           {...mainImage}
-          width="600"
+          width={600}
           alt="profile"
           className="grid-image bg-gray-100 rounded-md md:mb-5 h-500px w-full object-cover"
         ></SanityImage>
         <div className="grid-title text-center md:text-left">
-          <h1 className="text-3xl sm:text-7xl font-thin uppercase">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-thin uppercase">
             {aboutHeader}
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-gray-500 mt-5 font-extralight">
@@ -126,7 +125,7 @@ const IndexPage = ({ data }) => {
             theme="dark"
           >
 
-              <p className="text-lg">{featuredPost.previewText ? featuredPost.previewText : featuredPost.excerpt}</p>
+            <p className="text-lg">{featuredPost.previewText ? featuredPost.previewText : featuredPost.excerpt}</p>
 
           </Card>
         </div>
@@ -156,7 +155,7 @@ const IndexPage = ({ data }) => {
               .filter((post) => post.id !== featuredPost.id)
               .slice(0, 2)
               .map((post) => (
-                <ArticleCard post={post}></ArticleCard>
+                <ArticleCard key={post.id} post={post}></ArticleCard>
               ))}
           </div>
         </section>
@@ -164,16 +163,16 @@ const IndexPage = ({ data }) => {
         <hr className="my-14 border-gray-500 border-solid xl:hidden"></hr>
         <div className="w-px bg-gray-500 xl:col-start-8 hidden xl:block"></div>
 
-        <section className= "xl:col-start-9 xl:col-end-13">
+        <section className="xl:col-start-9 xl:col-end-13">
           <h1 className="text-3xl mb-10 uppercase">About</h1>
           <div className="block md:flex xl:block md:space-x-6 xl:space-x-0">
             <SanityImage
-            {...aboutImage}
-            width="500"
-            className="rounded-md w-full md:w-80 xl:w-full object-cover"
-            alt="Andy Miller and Family"
-          ></SanityImage>
-          <p className="text-lg mt-5">{aboutContent}</p>
+              {...aboutImage}
+              width={500}
+              className="rounded-md w-full md:w-80 xl:w-full object-cover"
+              alt="Andy Miller and Family"
+            ></SanityImage>
+            <p className="text-lg mt-5">{aboutContent}</p>
           </div>
 
         </section>
